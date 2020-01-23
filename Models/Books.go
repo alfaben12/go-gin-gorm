@@ -2,7 +2,6 @@ package Models
 
 import (
 	"../Config"
-	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -28,7 +27,6 @@ func GetOneBook(b *Book, id string) (err error) {
 }
 
 func PutOneBook(b *Book, id string) (err error) {
-	fmt.Println(b)
 	Config.DB.Save(b)
 	return nil
 }

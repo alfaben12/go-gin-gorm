@@ -11,6 +11,26 @@ type Book struct {
 	Category string `json:"category" bson:"_category" query:"category" form:"category"`
 }
 
+type Credential struct {
+	Username string `json:"username"`
+	Password string `json:"password"`
+}
+
+type Author struct {
+	gorm.Model
+	Name     string `json:"name" bson:"_name" query:"name" form:"name"`
+}
+
 func (b *Book) TableName() string {
 	return "book"
 }
+
+func (b *Author) TableName() string {
+	return "author"
+}
+
+func (b *Credential) TableName() string {
+	return "credential"
+}
+
+
